@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<style>
+  #myImage{
+    height:150px;
+    width:100px;
+  }
+</style>
 <html>
 <body>
 
@@ -8,11 +14,11 @@
 
 <p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
 
-<button onclick="document.getElementById('myImage').src='https://media.istockphoto.com/id/1180798346/photo/black-queen-chess-on-a-white-background.jpg?s=170667a&w=0&k=20&c=g-H6z2zYqc5je9_ZJ3ow6biZEYbukl_qPeAqCzCxh64='style='width:100px; height:150px'">Promote</button>
+<button onclick="document.getElementById('myImage').src='https://media.istockphoto.com/id/1180798346/photo/black-queen-chess-on-a-white-background.jpg?s=170667a&w=0&k=20&c=g-H6z2zYqc5je9_ZJ3ow6biZEYbukl_qPeAqCzCxh64='">Promote</button>
 
 <img id="myImage" src="https://dictionary.cambridge.org/images/thumb/pawn_noun_002_26818.jpg?version=5.0.341" style="width:100px; height:150px">
 
-<button onclick="document.getElementById('myImage').src='https://dictionary.cambridge.org/images/thumb/pawn_noun_002_26818.jpg?version=5.0.341'style='width:100px; height:150px'">Revert</button>
+<button onclick="document.getElementById('myImage').src='https://dictionary.cambridge.org/images/thumb/pawn_noun_002_26818.jpg?version=5.0.341'">Revert</button>
 
 </body>
 </html>
