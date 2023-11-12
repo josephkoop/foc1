@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 
+.dropdown{
+	position:relative;
+	left:5px;
+	top:0px;
+	display:inline-block;
+}
+
+.button{
+	width:300px;
+	background-color:white;
+	color:green;
+	padding:12px;
+	font-size:150%;
+	border-style:solid;
+	border-width:3px;
+	border-color:green;
+	cursor:pointer;
+}
+
+.button:hover{
+	background-color:gray;
+}
+
+.back{
+	display:inline-block;
+	position:relative;
+	left:10px;
+}
+
+.dropdowncontent{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:50px;
+	background-color:white;
+	border-color:green;
+	border-width:3px;
+	border-style:solid;
+
+}
+
+.dropdowncontent a{
+	color:green;
+	padding:12px 12px;
+	text-decoration:none;
+	display:block;
+	font-size:75%;
+}
+
+.dropdowncontent a:hover {
+	background-color:gray;
+}
+
+.dropdown:hover .dropdowncontent{
+	display:block;
+}
+
+h1{
+	color:white;
+	text-align:center;
+}
+
+p{
+	color:white;
+	text-align:center;
+	font-size:115%;
+}
+
+.control{
+	display:inline-block;
+	color:black;
+	height:50px;
+	width:100px;
+	font-size:150%
+}
+
+html{
+	background:linear-gradient(
+	to bottom,
+	gray 0%,
+	gray 12%,
+	black 12%,
+	black 100%
+	);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+
+
+#myImage{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+</style>
+
+<title>Joseph's Home Page</title>
+</head>
+<body>
+
+<br><br>
+
+<div class="dropdown">
+   <button class="button">Other Projects</botton>
+   <div class="dropdowncontent">
+	<a href="notgate.html" target="_self">Project 1: NOT Gate</a>
+	<a href="andgate.html" target="_self">Project 2: AND Gate</a>
+	<a href="binaryconverter.html" target="_self">Project 3: Binary to Hexidecimal Converter</a>
+	<a href="ascIIconverter.html" target="_self">Project 4: ASCII Converter</a>
+	<a href="unicodeconverter.html" target="_self">Project 5: UNICODE Converter</a>
+	<a href="machineconverter.html" target="_self">Project 6: Machine Language Instructions Converter</a>
+   </div>
+</div>
+<div class="back">
+<a href="https://josephkoop.github.io/foc1/project.html" style="text-decoration:none"<button class="button">Back</button></a>
+</div>
+
+
+<h1>Project 2: AND Gate</h1>
+<p>The and gate gives an on signal if both of its input signals are on and an signal signal if one or both of its signals are off.</p>
+<br>
+
+<ul style="text-align:center">
+<li style="display:inline-block"><button class="control" onclick="document.getElementById('myImage').src='and_off_off.png'">Off, Off</button></li>
+<li style="display:inline-block"><button class="control" onclick="document.getElementById('myImage').src='and_off_on.png'">Off, On</button></li>
+<li style="display:inline-block"><button class="control" onclick="document.getElementById('myImage').src='and_on_off.png'">On, Off</button></li>
+<li style="display:inline-block"><button class="control" onclick="document.getElementById('myImage').src='and_on_on.png'">On, On</button></li>
+</ul>
+<br>
+<br>
+<img id="myImage" src="and_off_off.png" alt="And gate off">
+
+
+</body>
+</html>
