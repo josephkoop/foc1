@@ -71,20 +71,20 @@ p{
 	font-size:115%;
 }
 
-.control{
-	position:relative;
-	background-color:white;
+.flexcontainer > div{
+	margin-left:20px;
 	color:black;
-	height:50px;
-	width:100px;
 	font-size:150%;
 	border-style:solid;
 	border-color:black;
 	border-width:2px;
 }
 
-li{
-	display:inline-block;
+.flexcontainer{
+	justify-content:center;
+	align-items:center;
+	display:flex;
+	flex-direction:row;
 }
 
 html{
@@ -134,11 +134,11 @@ html{
 <h1>Project 3: Binary to Hexidecimal Converter</h1>
 <p>Every four digit binary number is represented by a hexidecimal number or letter. Enter a four digit number and press convert.</p>
 
-<ul style="text-align:center">
-<li><input style="bottom:70px" class="control" type="number" id="inputbinary" value=""></input></li>
-<li><button style="bottom:70px" class="control" onclick="binarytohexidecimal()">Convert</button></li>
-<li><p style="bottom:30px" class="control" id="demo"></p></li>
-</ul>
+<div class="flexcontainer">
+<div><input type="number" id="inputbinary" value=""></input></div>
+<div><button id="button1" onclick="binarytohexidecimal()">Convert</button></div>
+<div><p id="demo"></p></div>
+</div>
 
 <br>
 <br>
@@ -150,6 +150,14 @@ function binarytohexidecimal() {
     var hexOut = parseInt(x, 2).toString(16).toUpperCase();
     document.getElementById("demo").innerHTML = hexOut;
 }
+var input = document.getElementById("inputbinary");
+input.addEventListener("keypress", function(event){
+	if (event.key === "Enter"){
+		event.preventDefault();
+		document.getElementById("button1").click();
+		document.getElementById("inputbinary").value = "";
+	}
+});
 </script>
 
 </body>
