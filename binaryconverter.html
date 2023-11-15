@@ -1,108 +1,156 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cool Binary to Hexadecimal Converter</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+
+.dropdown{
+	position:relative;
+	left:5px;
+	top:0px;
+	display:inline-block;
+}
+
+.button{
+	width:300px;
+	background-color:white;
+	color:green;
+	padding:12px;
+	font-size:150%;
+	border-style:solid;
+	border-width:3px;
+	border-color:green;
+	cursor:pointer;
+}
+
+.button:hover{
+	background-color:gray;
+}
+
+.back{
+	display:inline-block;
+	position:relative;
+	left:10px;
+}
+
+.dropdowncontent{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:50px;
+	background-color:white;
+	border-color:green;
+	border-width:3px;
+	border-style:solid;
+
+}
+
+.dropdowncontent a{
+	color:green;
+	padding:12px 12px;
+	text-decoration:none;
+	display:block;
+	font-size:75%;
+}
+
+.dropdowncontent a:hover {
+	background-color:gray;
+}
+
+.dropdown:hover .dropdowncontent{
+	display:block;
+}
+
+h1{
+	color:white;
+	text-align:center;
+}
+
+p{
+	color:white;
+	text-align:center;
+	font-size:115%;
+}
+
+.control{
+	position:relative;
+	background-color:white;
+	color:black;
+	height:50px;
+	width:100px;
+	font-size:150%;
+	border-style:solid;
+	border-color:black;
+	border-width:2px;
+}
+
+li{
+	display:inline-block;
+}
+
+html{
+	background:linear-gradient(
+	to bottom,
+	gray 0%,
+	gray 12%,
+	black 12%,
+	black 100%
+	);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+#myImage{
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+</style>
+<title>Joseph's Home Page</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body {
-            background-color: #1E2A38;
-            font-family: Arial, sans-serif;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-            margin: 0;
-        }
-
-        h2 {
-            font-size: 36px;
-        }
-
-        hr {
-            border-color: #00B8D4;
-            width: 50%;
-        }
-
-        img {
-            float: left;
-            padding-right: 40px;
-            padding-left: 40px;
-            padding-bottom: 40px;
-        }
-
-        input {
-            width: 100px;
-            padding: 10px;
-            font-size: 18px;
-            border: 2px solid #00B8D4;
-            border-radius: 5px;
-        }
-
-        button {
-            background-color: #00B8D4;
-            color: #ffffff;
-            border: none;
-            padding: 15px 32px;
-            font-size: 18px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0091A4;
-        }
-
-        p {
-            font-size: 18px;
-            margin: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: #00B8D4;
-            font-size: 18px;
-        }
-
-        footer {
-            font-size: 18px;
-        }
-
-        .instagram-icon {
-            width: 40px; /* Adjust the size as needed */
-        }
-    </style>
 </head>
 <body>
 
-<h2>Cool Binary to Hexadecimal Converter</h2>
+<br><br>
 
-<hr>
+<div class="dropdown">
+   <button class="button">Other Projects</botton>
+   <div class="dropdowncontent">
+	<a href="notgate.html" target="_self">Project 1: NOT Gate</a>
+	<a href="andgate.html" target="_self">Project 2: AND Gate</a>
+	<a href="binaryconverter.html" target="_self">Project 3: Binary to Hexidecimal Converter</a>
+	<a href="ascIIconverter.html" target="_self">Project 4: ASCII Converter</a>
+	<a href="unicodeconverter.html" target="_self">Project 5: UNICODE Converter</a>
+	<a href="machineconverter.html" target="_self">Project 6: Machine Language Instructions Converter</a>
+   </div>
+</div>
+<div class="back">
+<a href="https://josephkoop.github.io/foc1/project.html" style="text-decoration:none"<button class="button">Back</button></a>
+</div>
 
-<img src="bintohex.jpg" alt="Binary to Hexadecimal" style="width: 300px; height: auto;">
 
-<input type="number" id="inputBin" value="">
+<h1>Project 3: Binary to Hexidecimal Converter</h1>
+<p>Every four digit binary number is represented by a hexidecimal number or letter. Enter a four digit number and press convert.</p>
 
-<p>Enter any 4-digit binary number:</p>
+<ul style="text-align:center">
+<li><input style="bottom:70px" class="control" type="number" id="inputbinary" value=""></input></li>
+<li><button style="bottom:70px" class="control" onclick="binarytohexidecimal()">Convert</button></li>
+<li><p style="bottom:30px" class="control" id="demo"></p></li>
+</ul>
 
-<button onclick="binToHex()">Convert</button>
-
-<p>Hexadecimal Value:</p>
-<p id="demo"></p>
+<br>
+<br>
+<img id="myImage" src="bintohex.jpg" alt="conversion chart">
 
 <script>
-function binToHex() {
-    var x = document.getElementById("inputBin").value;
+function binarytohexidecimal() {
+    var x = document.getElementById("inputbinary").value;
     var hexOut = parseInt(x, 2).toString(16).toUpperCase();
     document.getElementById("demo").innerHTML = hexOut;
 }
 </script>
 
-<a href="index.html">Back to Home</a>
-
-<footer>
-  <p>made and designed by Darren Adilzon Cartagena </p>
-</footer>
 </body>
 </html>
