@@ -1,1 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
 
+.dropdown{
+	position:relative;
+	left:5px;
+	top:0px;
+	display:inline-block;
+}
+
+.button{
+	width:300px;
+	background-color:white;
+	color:green;
+	padding:12px;
+	font-size:150%;
+	border-style:solid;
+	border-width:3px;
+	border-color:green;
+	cursor:pointer;
+}
+
+.button:hover{
+	background-color:gray;
+}
+
+.back{
+	display:inline-block;
+	position:relative;
+	left:10px;
+}
+
+.dropdowncontent{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:50px;
+	background-color:white;
+	border-color:green;
+	border-width:3px;
+	border-style:solid;
+
+}
+
+.dropdowncontent a{
+	color:green;
+	padding:12px 12px;
+	text-decoration:none;
+	display:block;
+	font-size:75%;
+}
+
+.dropdowncontent a:hover {
+	background-color:gray;
+}
+
+.dropdown:hover .dropdowncontent{
+	display:block;
+}
+
+h1{
+	color:white;
+	text-align:center;
+}
+
+p{
+	color:white;
+	text-align:center;
+	font-size:115%;
+}
+
+.flexcontainer > div{
+	margin-left:20px;
+	color:black;
+	font-size:150%;
+	border-style:solid;
+	border-color:black;
+	border-width:2px;
+}
+
+.flexcontainer{
+	justify-content:center;
+	align-items:center;
+	display:flex;
+	flex-direction:row;
+}
+
+html{
+	background:linear-gradient(
+	to bottom,
+	gray 0%,
+	gray 12%,
+	black 12%,
+	black 100%
+	);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+.myImage{
+	display:inline-block;
+	height:450px;
+	width:33%;
+}
+
+</style>
+<title>Joseph's Home Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<br><br>
+
+<div class="dropdown">
+   <button class="button">Other Projects</botton>
+   <div class="dropdowncontent">
+	<a href="notgate.html" target="_self">Project 1: NOT Gate</a>
+	<a href="andgate.html" target="_self">Project 2: AND Gate</a>
+	<a href="binaryconverter.html" target="_self">Project 3: Binary to Hexidecimal Converter</a>
+	<a href="ascIIconverter.html" target="_self">Project 4: ASCII Converter</a>
+	<a href="unicodeconverter.html" target="_self">Project 5: UNICODE Converter</a>
+	<a href="machineconverter.html" target="_self">Project 6: Machine Language Instructions Converter</a>
+   </div>
+</div>
+<div class="back">
+<a href="https://josephkoop.github.io/foc1/project.html" style="text-decoration:none"<button class="button">Back</button></a>
+</div>
+
+
+<h1>Project 5: Unicode Converter</h1>
+<p>Enter a code from the charts below to retrieve that symbol.</p>
+
+<div class="flexcontainer" style="height:100px">
+<div><input style="height:25px; width:100px; font-size:20px" type="text" id="inputnumber" value=""></input></div>
+<div><button style="height:30px; width:100px; font-size:20px" id="button1" onclick="numbertoUnicode()">Convert</button></div>
+<div><p style="font-size:30px" id="demo"></p></div>
+</div>
+
+<br>
+<br>
+<img class="myImage" src="unicode1.jpg" alt="conversion chart">
+<img class="myImage" src="unicode2.jpg" alt="conversion chart">
+<img class="myImage" src="unicode3.jpg" alt="conversion chart">
+
+<script>
+function numbertoUnicode() {
+	var x, text;
+    x = document.getElementById("inputnumber").value;
+	text = x;
+	unicode = ("&#x" + x)
+    document.getElementById("demo").innerHTML = unicode;
+}
+var input = document.getElementById("inputnumber");
+input.addEventListener("keypress", function(event){
+	if (event.key === "Enter"){
+		event.preventDefault();
+		document.getElementById("button1").click();
+		document.getElementById("inputnumber").value = "";
+	}
+});
+</script>
+
+</body>
+</html>
